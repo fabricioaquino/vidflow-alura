@@ -1,0 +1,37 @@
+// instalando o json-server
+npm install -g json-server
+
+
+json-server --watch backend/videos.json
+
+fetch() => buscar
+
+fulfilled => ok
+
+Promise pode estar em um de três estados:
+ - pendente(estado inicial, nem cumprido nem rejeitado)
+ - resolvida/fulfilled (a operação assíncrona foi concluída com sucesso) 
+ - rejeitada/rejected (a operação assíncrona falhou)
+
+
+ Podemos criar uma Promise da seguinte forma:
+
+ let promise = new Promise((resolve, reject) => {
+    // código assíncrono aqui
+    if (/* tudo ocorreu bem */) {
+        resolve("funcionou!");
+    } else {
+        reject("houve um erro");
+    }
+});
+
+resolve e reject, que são funções que serão chamadas quando a Promise for resolvida ou rejeitada, respectivamente.
+Depois que a Promise é retornada, podemos lidar com seu resultado utilizando o método then para o caso de sucesso (resolvida) e o método catch para o caso de erro (rejeitada):
+
+pode ser um desafio lidar com várias Promises. Para isso, temos disponíveis as funções Promise.all e Promise.race
+
+Promise.all: recebe um array de Promises e retorna uma nova promiseque resolve quando todas as Promises do array foram resolvidas ou uma delas foi rejeitada.
+
+Promise.race: retorna uma promiseque se resolve ou rejeita com a resolução ou rejeição da primeira promiseno array a se resolver.
+
+O "Callback Hell" é um termo usado para descrever a situação em que múltiplas chamadas de função com callbacks são aninhadas profundamente dentro de outras chamadas de função.
